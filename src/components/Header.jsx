@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Select, MenuItem, FormControl } from '@mui/material';
+import { Box, Select, MenuItem, FormControl, IconButton, Drawer } from '@mui/material';
 import { styled } from '@mui/system';
 
 // Styled components matching the CSS provided
@@ -31,6 +31,8 @@ const HeaderInner = styled('div')({
   maxWidth: '1200px',
   margin: '0 auto',
   width: '100%',
+  paddingLeft: '15px',
+  paddingRight: '15px',
 });
 
 const LogoWrap = styled('a')({
@@ -43,7 +45,11 @@ const Logo = styled('img')({
   height: '36px',
 });
 
-const Nav = styled('nav')({});
+const Nav = styled('nav')(({ theme }) => ({
+  '@media (max-width: 992px)': {
+    display: 'none',
+  },
+}));
 
 const NavList = styled('ul')({
   listStyle: 'none',
@@ -73,6 +79,11 @@ const HeaderCtaWrap = styled('div')({
   display: 'flex',
   alignItems: 'center',
   gap: '16px',
+  '@media (max-width: 992px)': {
+    '.n-btn-primary': {
+      display: 'none',
+    }
+  },
 });
 
 const PrimaryButton = styled('a')({
@@ -154,11 +165,89 @@ const LanguageMenuItem = styled(MenuItem)({
   color: 'rgb(36, 60, 132)',
 });
 
+// New styled components for mobile menu
+const MobileMenuButton = styled(IconButton)({
+  display: 'none',
+  fontSize: '24px',
+  color: 'rgb(36, 60, 132)',
+  '@media (max-width: 992px)': {
+    display: 'flex',
+  },
+});
+
+const HamburgerIcon = styled('div')({
+  width: '24px',
+  height: '18px',
+  position: 'relative',
+  transform: 'rotate(0deg)',
+  transition: '.5s ease-in-out',
+  cursor: 'pointer',
+  '& span': {
+    display: 'block',
+    position: 'absolute',
+    height: '3px',
+    width: '100%',
+    background: 'rgb(36, 60, 132)',
+    borderRadius: '3px',
+    opacity: 1,
+    left: 0,
+    transform: 'rotate(0deg)',
+    transition: '.25s ease-in-out',
+  },
+  '& span:nth-of-type(1)': {
+    top: 0,
+  },
+  '& span:nth-of-type(2)': {
+    top: '8px',
+  },
+  '& span:nth-of-type(3)': {
+    top: '16px',
+  }
+});
+
+const DrawerContent = styled(Box)({
+  width: '280px',
+  padding: '30px 20px',
+});
+
+const MobileNavList = styled('ul')({
+  listStyle: 'none',
+  padding: 0,
+  margin: '30px 0',
+});
+
+const MobileNavItem = styled('li')({
+  marginBottom: '20px',
+});
+
+const MobileNavLink = styled('a')({
+  fontSize: '18px',
+  fontWeight: 600,
+  color: 'rgb(36, 60, 132)',
+  textDecoration: 'none',
+  display: 'block',
+  padding: '8px 0',
+  '&:hover': {
+    color: 'rgb(0, 0, 0)',
+  }
+});
+
+const MobileLoginButton = styled(PrimaryButton)({
+  width: '100%',
+  marginTop: '20px',
+  textAlign: 'center',
+});
+
 const Header = () => {
   const [language, setLanguage] = useState('en');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -210,7 +299,58 @@ const Header = () => {
               <LanguageMenuItem value="es">Es</LanguageMenuItem>
             </LanguageSelect>
           </FormControl>
+          <MobileMenuButton onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+            <HamburgerIcon>
+              <span></span>
+              <span></span>
+              <span></span>
+            </HamburgerIcon>
+          </MobileMenuButton>
         </HeaderCtaWrap>
+        
+        {/* Mobile Menu Drawer */}
+        <Drawer
+          anchor="right"
+          open={mobileMenuOpen}
+          onClose={toggleMobileMenu}
+          PaperProps={{
+            sx: {
+              backgroundColor: 'rgba(255, 255, 255, 0.97)',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+            }
+          }}
+        >
+          <DrawerContent>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Logo src={`${process.env.PUBLIC_URL}/assets/media/logo.svg`} alt="nido logo" style={{ height: '30px' }} />
+              <IconButton onClick={toggleMobileMenu}>
+                <Box sx={{ fontSize: '24px', fontWeight: 'bold' }}>×</Box>
+              </IconButton>
+            </Box>
+            <MobileNavList>
+              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Our Solutions</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Clients</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Resources</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>About Us</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Contact</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Pricing</MobileNavLink></MobileNavItem>
+            </MobileNavList>
+            <MobileLoginButton href="#" className="n-btn-primary" onClick={toggleMobileMenu}>
+              Log In
+              <svg className="n-arrow" width="17" height="15" viewBox="0 0 17 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g clipPath="url(#clip0_3_772)">
+                  <path d="M10.1969 1.72336L15.7969 7.32336M15.7969 7.32336L10.1969 12.9234M15.7969 7.32336H1.79688" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_3_772">
+                    <rect width="16" height="14" fill="currentColor" transform="translate(0.796875 0.723358)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </MobileLoginButton>
+          </DrawerContent>
+        </Drawer>
       </HeaderInner>
     </HeaderContainer>
   );
