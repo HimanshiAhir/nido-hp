@@ -50,7 +50,7 @@ const FAQQuestionText = styled(Typography)(({ theme }) => ({
 }));
 
 const FAQAnswer = styled(Box)(({ theme, open }) => ({
-  padding: open ? '0 30px 24px' : '0 30px',
+  padding: open ? '12px 30px 24px' : '0 30px',
   height: open ? 'auto' : '0',
   overflow: 'hidden',
   transition: 'all 0.3s ease',
