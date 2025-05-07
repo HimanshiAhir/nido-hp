@@ -18,20 +18,20 @@ const SectionSubHeading = styled(Typography)(({ theme }) => ({
 }));
 
 const FAQContainer = styled(Box)(({ theme }) => ({
-  maxWidth: '900px',
+  maxWidth: '1076px',
   margin: '0 auto',
 }));
 
 const FAQItem = styled(Box)(({ theme }) => ({
   backgroundColor: '#fff',
-  borderRadius: '10px',
-  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)',
+  borderRadius: '20px 20px 0 0',
+  boxShadow: '0px 0px 1px 0px rgba(66, 71, 76, 0.25), 0px 8px 48px 0px rgba(10, 11, 30, 0.08), 0px 4px 8px 0px rgba(10, 11, 30, 0.06)',
   marginBottom: '16px',
   overflow: 'hidden',
 }));
 
 const FAQQuestion = styled(Box)(({ theme }) => ({
-  padding: '24px 30px',
+  padding: '12px 32px',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -44,6 +44,7 @@ const FAQQuestion = styled(Box)(({ theme }) => ({
 
 const FAQQuestionText = styled(Typography)(({ theme }) => ({
   fontSize: '18px',
+  lineHeight: '34px',
   fontWeight: 600,
   color: '#000',
 }));
@@ -71,7 +72,7 @@ const PlusIcon = styled(Box)(({ theme, open }) => ({
   '&::before, &::after': {
     content: '""',
     position: 'absolute',
-    backgroundColor: open ? '#ff5757' : '#000',
+    backgroundColor: open ? '#E50A0A' : '#E50A0A',
     borderRadius: '2px',
     transition: 'all 0.3s',
   },
@@ -97,7 +98,7 @@ const CTASection = styled(Box)(({ theme }) => ({
 
 const CTAText = styled(Typography)(({ theme }) => ({
   fontSize: '20px',
-  marginBottom: '20px',
+  marginBottom: '6px',
 }));
 
 const CTALink = styled('a')(({ theme }) => ({

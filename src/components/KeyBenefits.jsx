@@ -3,9 +3,9 @@ import { Box, Typography, Container, styled } from '@mui/material';
 
 // Styled components
 const KeyBenefitsSection = styled(Box)(({ theme }) => ({
-    padding: '100px 0',
+padding: '100px 0',
   paddingBottom: 0,
-  backgroundColor: '#f7f7f7',
+backgroundColor: '#f7f7f7',
 }));
 
 const SectionHeading = styled(Typography)(({ theme }) => ({
