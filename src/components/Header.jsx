@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Select, MenuItem, FormControl, IconButton, Drawer } from '@mui/material';
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 // Styled components matching the CSS provided
 const HeaderContainer = styled('header')({
@@ -60,7 +61,7 @@ const NavList = styled('ul')({
 
 const NavItem = styled('li')({});
 
-const NavLink = styled('a')({
+const NavLink = styled(Link)(({ theme }) => ({
   fontSize: '16px',
   fontWeight: 700,
   letterSpacing: '0.3px',
@@ -73,7 +74,7 @@ const NavLink = styled('a')({
     color: 'rgb(36, 60, 132)',
     borderColor: 'rgb(36, 60, 132)',
   }
-});
+}));
 
 const HeaderCtaWrap = styled('div')({
   display: 'flex',
@@ -253,17 +254,19 @@ const Header = () => {
   return (
     <HeaderContainer className="n-header">
       <HeaderInner className="n-container n-header-inner">
-        <LogoWrap href="#" className="n-logo-wrap">
+        <LogoWrap to="/" component={Link} className="n-logo-wrap">
           <Logo src={`${process.env.PUBLIC_URL}/assets/media/logo.svg`} alt="nido logo" />
         </LogoWrap>
         <Nav className="n-header-nav">
           <NavList className="n-header-nav-list">
-            <NavItem className="n-header-nav-item"><NavLink href="#" className="n-header-nav-link">Our Solutions</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink href="#" className="n-header-nav-link">Clients</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink href="#" className="n-header-nav-link">Resources</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink href="#" className="n-header-nav-link">About Us</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink href="#" className="n-header-nav-link">Contact</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink href="#" className="n-header-nav-link">Pricing</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/" className="n-header-nav-link">Home</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/crm" className="n-header-nav-link">CRM</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/solutions" className="n-header-nav-link">Our Solutions</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/clients" className="n-header-nav-link">Clients</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/resources" className="n-header-nav-link">Resources</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/about" className="n-header-nav-link">About Us</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/contact" className="n-header-nav-link">Contact</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/pricing" className="n-header-nav-link">Pricing</NavLink></NavItem>
           </NavList>
         </Nav>
         <HeaderCtaWrap className="n-header-cta-wrap">

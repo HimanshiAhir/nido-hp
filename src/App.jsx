@@ -1,5 +1,6 @@
 // src/App.jsx
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import OurSolutions from './components/OurSolutions';
@@ -9,8 +10,9 @@ import NidoInAction from './components/NidoInAction';
 import FAQs from './components/FAQs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import CRMPage from './components/CRMPage';
 
-function App() {
+function HomePage() {
   return (
     <React.Fragment>
       <Header />
@@ -23,6 +25,17 @@ function App() {
       <CTA />
       <Footer />
     </React.Fragment>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/crm" element={<CRMPage />} />
+      </Routes>
+    </Router>
   );
 }
 
