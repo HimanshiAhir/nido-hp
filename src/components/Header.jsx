@@ -221,7 +221,7 @@ const MobileNavItem = styled('li')({
   marginBottom: '20px',
 });
 
-const MobileNavLink = styled('a')({
+const MobileNavLink = styled(Link)({
   fontSize: '18px',
   fontWeight: 600,
   color: 'rgb(36, 60, 132)',
@@ -327,12 +327,9 @@ const Header = () => {
               </IconButton>
             </Box>
             <MobileNavList>
-              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Our Solutions</MobileNavLink></MobileNavItem>
-              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Clients</MobileNavLink></MobileNavItem>
-              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Resources</MobileNavLink></MobileNavItem>
-              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>About Us</MobileNavLink></MobileNavItem>
-              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Contact</MobileNavLink></MobileNavItem>
-              <MobileNavItem><MobileNavLink href="#" onClick={toggleMobileMenu}>Pricing</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink to="/crm" onClick={toggleMobileMenu}>CRM</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink to="/installer" onClick={toggleMobileMenu}>Installer</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink to="/marketplace" onClick={toggleMobileMenu}>Marketplace</MobileNavLink></MobileNavItem>
             </MobileNavList>
             <MobileLoginButton href="#" className="n-btn-primary" onClick={toggleMobileMenu}>
               Log In
