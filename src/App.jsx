@@ -10,7 +10,9 @@ import NidoInAction from './components/NidoInAction';
 import FAQs from './components/FAQs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import CRMPage from './components/CRMPage';
+import { CRMPage } from './components/CRM';
+import { InstallerPage } from './components/Installer';
+import { MarketplacePage } from './components/Marketplace';
 
 function HomePage() {
   return (
@@ -34,6 +36,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/crm" element={<CRMPage />} />
+        <Route path="/installer" element={<InstallerPage />} />
+        <Route path="/marketplace" element={<MarketplacePage />} />
       </Routes>
     </Router>
   );

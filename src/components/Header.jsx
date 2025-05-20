@@ -259,14 +259,9 @@ const Header = () => {
         </LogoWrap>
         <Nav className="n-header-nav">
           <NavList className="n-header-nav-list">
-            <NavItem className="n-header-nav-item"><NavLink to="/" className="n-header-nav-link">Home</NavLink></NavItem>
             <NavItem className="n-header-nav-item"><NavLink to="/crm" className="n-header-nav-link">CRM</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink to="/solutions" className="n-header-nav-link">Our Solutions</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink to="/clients" className="n-header-nav-link">Clients</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink to="/resources" className="n-header-nav-link">Resources</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink to="/about" className="n-header-nav-link">About Us</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink to="/contact" className="n-header-nav-link">Contact</NavLink></NavItem>
-            <NavItem className="n-header-nav-item"><NavLink to="/pricing" className="n-header-nav-link">Pricing</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/installer" className="n-header-nav-link">Installer</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/marketplace" className="n-header-nav-link">Marketplace</NavLink></NavItem>
           </NavList>
         </Nav>
         <HeaderCtaWrap className="n-header-cta-wrap">
