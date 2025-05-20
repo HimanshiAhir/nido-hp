@@ -27,7 +27,7 @@ const BannerContentWrap = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down('sm')]: {
     paddingTop: '90px',
-    paddingBottom: '90px',
+    paddingBottom: '30px',
   },
 }));
 
@@ -44,8 +44,8 @@ const BannerTitle = styled(Typography)(({ theme }) => ({
   position: 'relative',
   zIndex: 2,
   [theme.breakpoints.down('md')]: {
-    fontSize: '60px',
-    lineHeight: '70px',
+    fontSize: '40px',
+    lineHeight: 1.2,
   },
 }));
 
@@ -58,6 +58,7 @@ const BannerImage = styled('img')(({ theme }) => ({
   position: 'relative',
   zIndex: 1,
   maxHeight: '100%',
+  maxWidth: '100%',
 }));
 
 const PrimaryButton = styled(Button)(({ theme }) => ({

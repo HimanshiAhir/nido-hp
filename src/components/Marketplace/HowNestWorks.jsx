@@ -72,7 +72,11 @@ const WorksItem = styled(Box)(({ active, isBeforeActive, theme }) => ({
     '& svg': {
         flexShrink: 0,
         marginTop: '4px'
-    }
+    },
+    '@media (max-width:576px)': {
+        padding: '16px 24px',
+        gap: '16px',
+    },
 }));
 
 const WorksItemContent = styled(Box)(({ theme }) => ({
