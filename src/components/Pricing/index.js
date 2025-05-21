@@ -1,8 +1,10 @@
 // Export all Pricing components for easy imports
-import PricingSection from './PricingSection';
+// import PricingSection from './PricingSection';
+import PricingSectionDynamic from './PricingSectionDynamic';
 import PricingPage from './PricingPage';
 
 export {
-  PricingSection,
+  // PricingSection,
+  PricingSectionDynamic,
   PricingPage
 };

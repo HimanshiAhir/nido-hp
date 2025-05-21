@@ -345,6 +345,8 @@ const CheckmarkSVG = ({ color = '#093988', strokeColor = '#1C3D88' }) => (
 );
 
 const PricingSection = () => {
+
+
   return (
     <PricingTableSection>
       <PricingContainer>
