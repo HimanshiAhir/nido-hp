@@ -262,6 +262,7 @@ const Header = () => {
             <NavItem className="n-header-nav-item"><NavLink to="/crm" className="n-header-nav-link">CRM</NavLink></NavItem>
             <NavItem className="n-header-nav-item"><NavLink to="/installer" className="n-header-nav-link">Installer</NavLink></NavItem>
             <NavItem className="n-header-nav-item"><NavLink to="/marketplace" className="n-header-nav-link">Marketplace</NavLink></NavItem>
+            <NavItem className="n-header-nav-item"><NavLink to="/pricing" className="n-header-nav-link">Pricing</NavLink></NavItem>
           </NavList>
         </Nav>
         <HeaderCtaWrap className="n-header-cta-wrap">
@@ -330,6 +331,7 @@ const Header = () => {
               <MobileNavItem><MobileNavLink to="/crm" onClick={toggleMobileMenu}>CRM</MobileNavLink></MobileNavItem>
               <MobileNavItem><MobileNavLink to="/installer" onClick={toggleMobileMenu}>Installer</MobileNavLink></MobileNavItem>
               <MobileNavItem><MobileNavLink to="/marketplace" onClick={toggleMobileMenu}>Marketplace</MobileNavLink></MobileNavItem>
+              <MobileNavItem><MobileNavLink to="/pricing" onClick={toggleMobileMenu}>Pricing</MobileNavLink></MobileNavItem>
             </MobileNavList>
             <MobileLoginButton href="#" className="n-btn-primary" onClick={toggleMobileMenu}>
               Log In

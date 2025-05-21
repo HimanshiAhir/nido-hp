@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import { CRMPage } from './components/CRM';
 import { InstallerPage } from './components/Installer';
 import { MarketplacePage } from './components/Marketplace';
+import { PricingPage } from './components/Pricing';
 
 function HomePage() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/crm" element={<CRMPage />} />
         <Route path="/installer" element={<InstallerPage />} />
         <Route path="/marketplace" element={<MarketplacePage />} />
+        <Route path="/pricing" element={<PricingPage />} />
       </Routes>
     </Router>
   );
